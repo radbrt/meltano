@@ -99,14 +99,14 @@ A benefit of this approach is that you do not need to enable shared key access t
 #### Using an Azure connection string
 
 You can provide a [connection string](https://learn.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string) to Meltano via the [`state_backend.azure.connection_string`](/reference/settings/#state_backendazureconnection_string) setting.
-If no `state_backend.azure.connection_string` setting is configured, Meltano will use the value of the `AZURE_STORAGE_CONNECTION_STRING` environment variable.
+If no `state_backend.azure.connection_string` setting is configured, Meltano will use the value of the `MELTANO_STATE_BACKEND_AZURE_CONNECTION_STRING` environment variable.
 If the connection string is not provided via either of these methods, Meltano will not be able to authenticate to Azure and any state operations will fail.
 
 An example environment variable configuration is given below:
 
 ```shell
 MELTANO_STATE_BACKEND_URI='azure://meltano-state'
-AZURE_STORAGE_CONNECTION_STRING='DefaultEndpointsProtocol=https;AccountName=mystorageaccount;AccountKey=gSAw....'
+MELTANO_STATE_BACKEND_AZURE_CONNECTION_STRING='DefaultEndpointsProtocol=https;AccountName=mystorageaccount;AccountKey=gSAw....'
 ```
 
 ### AWS S3
